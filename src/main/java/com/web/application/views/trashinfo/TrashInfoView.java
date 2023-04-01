@@ -1,8 +1,8 @@
 package com.web.application.views.trashinfo;
 
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Image;
-import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -14,21 +14,51 @@ import com.web.application.views.MainLayout;
 public class TrashInfoView extends VerticalLayout {
 
     public TrashInfoView() {
-        setSpacing(false);
+        VerticalLayout layout = new VerticalLayout();
+        HorizontalLayout TitleLayout = new HorizontalLayout();
+        H1 Title = new H1("Trash Info");
+        Image infoIcn = new Image("https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png","Info Icon");
+        H4 description = new H4("Learning about disposing waste can be a daunting task but bellow is some useful information about waste");
+        infoIcn.setHeight("40px");
+        TitleLayout.add(infoIcn);
+        TitleLayout.add(Title);
+        layout.add(TitleLayout);
+        layout.add(description);
+        Title.getStyle().set("color", "blue");
 
-        Image img = new Image("images/empty-plant.png", "placeholder plant");
-        img.setWidth("200px");
-        add(img);
+        //Properties
+        layout.setSpacing(true);
+        layout.setAlignItems(Alignment.CENTER);
+        TitleLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
 
-        H2 header = new H2("This place intentionally left empty");
-        header.addClassNames(Margin.Top.XLARGE, Margin.Bottom.MEDIUM);
-        add(header);
-        add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
 
-        setSizeFull();
-        setJustifyContentMode(JustifyContentMode.CENTER);
-        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        getStyle().set("text-align", "center");
+        //Trash Layout
+        Div spacer = new Div();
+        spacer.setWidth("30px");
+        HorizontalLayout mainTrashlayout = new HorizontalLayout();
+        HorizontalLayout Compost = new HorizontalLayout();
+        HorizontalLayout Trash = new HorizontalLayout();
+        HorizontalLayout Recycle = new HorizontalLayout();
+
+        H6 compostDesc = new H6("Food scraps, soiled paper, & yard trimmings go in the compost cart. Want to compost? ");
+        Compost.add(compostDesc);
+        H6 trashDesc = new H6("Paper, cardboard, glass bottles, aluminum/tin cans, hard plastics, bundled plastic bags & thin (film) plastics go into the recyclables cart.");
+        Trash.add(trashDesc);
+        H6 recycleDesc = new H6("What is trash? Not much! Cat litter, ceramics, & broken glass to name a few.  Less of these items placed in the landfill cart the better.");
+        Recycle.add(recycleDesc);
+
+        mainTrashlayout.add(Compost);
+        mainTrashlayout.add(spacer);
+        mainTrashlayout.add(Trash);
+        mainTrashlayout.add(spacer);
+        mainTrashlayout.add(Recycle);
+
+
+
+        add(layout);
+
+        add(mainTrashlayout);
     }
 
 }

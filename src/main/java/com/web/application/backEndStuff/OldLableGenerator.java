@@ -24,7 +24,7 @@ public class OldLableGenerator {
     }
 
     public static void main (String[] args) throws IOException {
-        detectLabels("C:\\Users\\prate\\Pictures\\EverythigIWantToDoIsIliegal.png");
+        detectLabels("/Users/benfaer/Desktop/Screen Shot 2023-03-27 at 7.49.37 AM.png");
     }
 
     // Detects labels in the specified local image.
@@ -59,7 +59,7 @@ public class OldLableGenerator {
                             .getAllFields()
                             //.forEach((k, v) -> System.out.format("%s : %s%n", k, v.toString()));
                             .forEach((k, v) -> {
-                                //System.out.println((k.getName().equals("description") ? v.toString() : "     " + k.getName()));
+                                System.out.println((k.getName().equals("description") ? v.toString() : "     " + k.getName() + " : " + v.toString()));
                                 if(k.getName().equals("description")) {
                                     out.add(v.toString());
                                 }
