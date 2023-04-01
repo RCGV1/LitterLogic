@@ -1,13 +1,9 @@
 package com.web.application.backEndStuff;
 
-import com.theokanning.openai.completion.CompletionChoice;
-import com.theokanning.openai.completion.CompletionRequest;
-import com.theokanning.openai.completion.CompletionResult;
-import com.theokanning.openai.service.OpenAiService;
-
 public class BinFinder {
 
     String[] ewasteKeywords = {
+            "chromebook",
             "battery",
             "laptop",
             "computer",
@@ -96,18 +92,27 @@ public class BinFinder {
 
     public String getBinDisc (String bin) {
         switch (bin){
-            case "ewaste":
-                return "this category is less of a bin and more of a disposal style, which can vary from place to place. check your local guidelines for how to deal with ewaste";
-            case "compost":
-                return "this is typically the green garbage bin and is all about organic materials. if it is ir was alive, it goes here";
-            case "recycling":
-                return "this tends to be the blue bin, and hre things get fuzzy. because the type of plastics that can be recycled, among other things, can vary from region to region, we cannot be 100% sure that it is recyclable. make sre to check your local guidelines to be sure";
-            case "trash":
-                return "this is very simply the standard waste, and tends to be the black bin. it can be anything fro";
+            case "E-Waste":
+                return "This category contains all electronics, like computers, speakers, and the like.\n" +
+                       "Depending on where you are and what it is, there may be different ways of disposing of it, such as bulk pickup for a TV screen.";
+            case "Compost":
+                return "Compost includes all things organic, which is to say alive or previously alive, like moldy toast or cut grass.\n" +
+                       "Compost can be disposed of by simple virtue of household bin, specifically the green one.";
+            case "Recycling":
+                return "The goal of recycling i tue reuse old material. Recyclable items can be quite picky, especially since they are \n" +
+                       "compacted into huge cubes before shipping, and a single contaminant can cause the whole cube to go to the landfill.\n" +
+                       "Thus recycling can be very picky, with different types of plastic being allowed in different rejoins. Especially for \n" +
+                       "plastic, it is important to check local guidelines to see whether it is okay to recycle. Recycling can be handled in \n" +
+                        "much the same way as compost, except it's bin color is blue";
+            case "Trash":
+                return "Trash is a last ditch effort to find a home for waste with nowhere else to go. Trash can be almost anything, though not\n" +
+                        "E-Waste. However, the fact that it typically ends up either burned or in landfills means that it is not that great for\n" +
+                        "the enviroment, or the economy, as any material thrown away tends to be taken out of circulation forever";
             case "No keywords detected":
-                return "this was waste that could not be categorized into the other types (ewaste, compost, recycling, trash). we don't know what to do here so you're on your own";
+                return "Nothing stood ot to us from the prompt. Perhaps try again with a broad discription of what your item is, like \"plastic \n" +
+                        "bag\" or \"egg carton\"";
             default:
-                throw new IllegalArgumentException("no recognised bin");
+                throw new IllegalArgumentException("No recognised bin.");
         }
     }
 
@@ -116,26 +121,26 @@ public class BinFinder {
 
         for (String keyword : ewasteKeywords) {
             if(input.contains(keyword)){
-                return "ewaste";
+                return "E-Waste";
             }
         }
 
         for (String keyword : trashKeyword) {
             if(input.contains(keyword)){
-                return "trash";
+                return "Trash";
             }
         }
 
         for (String keyword : recycleKeywords) {
             if(input.contains(keyword)){
                 System.out.println(keyword);
-                return "recycling";
+                return "Recycling";
             }
         }
 
         for (String keyword : compostKeyWord) {
             if(input.contains(keyword)){
-                return "compost";
+                return "Compost";
             }
         }
 
