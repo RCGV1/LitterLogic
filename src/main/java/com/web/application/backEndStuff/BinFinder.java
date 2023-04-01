@@ -10,12 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BinFinder {
-
-    public static void main (String[] args) {
-        System.out.println(findBin("plastic bottle"));
-    }
     public static String findBin (String input) {
-        OpenAiService oAi = new OpenAiService("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");
+        OpenAiService oAi = new OpenAiService("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");
         CompletionResult result = null;
         CompletionRequest completionRequest = null;
 
@@ -23,7 +19,7 @@ public class BinFinder {
 
         completionRequest = CompletionRequest.builder()
                 .prompt("is a " + input + " typically ewaste?" +
-                        "ewaste is limited in scope to strictly electronics. if it is not an electronic, it is not ewaste" +
+                        "ewaste is limited in scope to strictly electronic devices or parts." +
                         " (yes/no)")
                 .model("text-davinci-003")
                 .echo(false)
@@ -50,7 +46,8 @@ public class BinFinder {
 
         completionRequest = CompletionRequest.builder()
                 .prompt("is a " + input + " recyclable? " +
-                        "recyclables tend to include plastic, but typically food wrappers or containers cannot be recycled because they are considered contaminated, and mut be thrown away" +
+                        "recyclables tend to include plastic, but typically food wrappers or containers cannot be recycled because they are considered contaminated, and must be thrown away. " +
+                        "water is an exception, though" +
                         "(yes/no)")
                 .model("text-davinci-003")
                 .echo(false)

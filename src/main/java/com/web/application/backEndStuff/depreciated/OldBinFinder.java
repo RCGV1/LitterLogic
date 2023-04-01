@@ -1,4 +1,4 @@
-package com.web.application.backEndStuff;
+package com.web.application.backEndStuff.depreciated;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

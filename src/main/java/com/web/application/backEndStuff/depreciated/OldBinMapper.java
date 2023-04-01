@@ -1,4 +1,4 @@
-package com.web.application.backEndStuff;
+package com.web.application.backEndStuff.depreciated;
 
 import com.theokanning.openai.edit.EditRequest;
 import com.theokanning.openai.service.OpenAiService;

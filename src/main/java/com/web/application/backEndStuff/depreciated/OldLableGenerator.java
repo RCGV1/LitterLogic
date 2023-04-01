@@ -1,4 +1,4 @@
-package com.web.application.backEndStuff;
+package com.web.application.backEndStuff.depreciated;
 
 import java.awt.image.BufferedImage;
 import com.google.cloud.vision.v1.AnnotateImageRequest;
