@@ -82,6 +82,7 @@ public class TrashSorterView extends VerticalLayout {
             if (trashText.getValue() == null){
                 System.out.println("null");
             } else{
+                System.out.println(trashText.getValue());
                String foundBin = binFinder.findBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);

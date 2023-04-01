@@ -61,9 +61,7 @@ public class BinFinder {
             "magazine",
             "hdpe",
             "cup",
-            "polyethylene",
-            "pet",
-            "pp"
+            "polyethylene"
     };
 
     String[] compostKeyWord = {
@@ -101,11 +99,11 @@ public class BinFinder {
             case "ewaste":
                 return "this category is less of a bin and more of a disposal style, which can vary from place to place. check your local guidelines for how to deal with ewaste";
             case "compost":
-                return "this is typically the green garbage bin and is all about organic materials";
+                return "this is typically the green garbage bin and is all about organic materials. if it is ir was alive, it goes here";
             case "recycling":
                 return "this tends to be the blue bin, and hre things get fuzzy. because the type of plastics that can be recycled, among other things, can vary from region to region, we cannot be 100% sure that it is recyclable. make sre to check your local guidelines to be sure";
             case "trash":
-                return "this is very simply the standard waste, and tends to be the black bin";
+                return "this is very simply the standard waste, and tends to be the black bin. it can be anything fro";
             case "No keywords detected":
                 return "this was waste that could not be categorized into the other types (ewaste, compost, recycling, trash). we don't know what to do here so you're on your own";
             default:
@@ -130,6 +128,7 @@ public class BinFinder {
 
         for (String keyword : recycleKeywords) {
             if(input.contains(keyword)){
+                System.out.println(keyword);
                 return "recycling";
             }
         }
