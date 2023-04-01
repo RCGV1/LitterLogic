@@ -51,7 +51,7 @@ public class TrashSorterView extends VerticalLayout {
         Title.getStyle().set("color", "blue");
         Span status = new Span("Pending input text....");
         H5 result = new H5();
-
+        H6 resultDesc = new H6();
         Div spacer = new Div();
         spacer.setHeight("30px");
         status.getElement().getThemeList().add("badge contrast primary");
@@ -62,6 +62,7 @@ public class TrashSorterView extends VerticalLayout {
         layout.add(imgDesc);
         layout.add(spacer);
         layout.add(result);
+        layout.add(resultDesc);
         layout.add(search,trashText);
 
         Anchor anchor = new Anchor("/Trash-Info", "Learn more about trash");
@@ -83,6 +84,8 @@ public class TrashSorterView extends VerticalLayout {
             } else{
                String foundBin = binFinder.findBin(trashText.getValue());
                 System.out.println(foundBin);
+                String binDesc = binFinder.getBinDisc(foundBin);
+                resultDesc.setText(binDesc);
                 result.setText(foundBin);
             }
         });
