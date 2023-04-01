@@ -17,6 +17,7 @@ import com.vaadin.flow.router.RouteAlias;
 import com.vaadin.flow.server.StreamResource;
 import com.vaadin.flow.theme.lumo.LumoIcon;
 import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
+import com.web.application.backEndStuff.BinFinder;
 import com.web.application.views.MainLayout;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 import com.vaadin.flow.component.textfield.TextField;
@@ -24,8 +25,7 @@ import com.vaadin.flow.component.textfield.TextField;
 import java.awt.*;
 import java.io.InputStream;
 
-import static com.web.application.backEndStuff.BinFinder.findBin;
-import static com.web.application.backEndStuff.BinFinder.frontTest;
+import com.web.application.backEndStuff.BinFinder;
 
 @PageTitle("Trash Sorter")
 @Route(value = "Trash-Sorter", layout = MainLayout.class)
@@ -76,10 +76,12 @@ public class TrashSorterView extends VerticalLayout {
 
         search.addClickListener(e -> {
 
+            BinFinder binFinder = new BinFinder();
+
             if (trashText.getValue() == null){
                 System.out.println("null");
             } else{
-               String foundBin = frontTest(trashText.getValue());
+               String foundBin = binFinder.frontTest(trashText.getValue());
                 System.out.println(foundBin);
                 result.setText(foundBin);
             }
