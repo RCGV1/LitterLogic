@@ -102,7 +102,7 @@ public class BinFinder {
                 return "Compost includes all things organic, which is to say alive or previously alive, like moldy toast or cut grass.\n" +
                        "Compost can be disposed of by simple virtue of household bin, specifically the green one.";
             case "Recycling":
-                return "The goal of recycling i tue reuse old material. Recyclable items can be quite picky, especially since they are \n" +
+                return "The goal of recycling is to reuse old material. Recyclable items can be quite picky, especially since they are \n" +
                        "compacted into huge cubes before shipping, and a single contaminant can cause the whole cube to go to the landfill.\n" +
                        "Thus recycling can be very picky, with different types of plastic being allowed in different rejoins. Especially for \n" +
                        "plastic, it is important to check local guidelines to see whether it is okay to recycle. Recycling can be handled in \n" +
@@ -142,7 +142,7 @@ public class BinFinder {
 
         for (String keyword : compostKeyWord) {
             if(input.contains(keyword)){
-                System.out.println("e");
+                //System.out.println("e");
                 return "Compost";
             }
         }
