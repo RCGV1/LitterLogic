@@ -24,7 +24,7 @@ public class TrashInfoView extends VerticalLayout {
         TitleLayout.add(Title);
         layout.add(TitleLayout);
         layout.add(description);
-        Title.getStyle().set("color", "blue");
+        Title.getStyle().set("color", "green");
 
         //Properties
         layout.setSpacing(true);
@@ -44,13 +44,13 @@ public class TrashInfoView extends VerticalLayout {
         Image TrashImg = new Image("https://www.recology.com/wp-content/uploads/2016/10/RecycleBin.jpg","Trash Image");
         Image RecycleImage = new Image("https://www.recology.com/wp-content/uploads/2016/10/LandfillBin.jpg","Recycle Image");
 
-        H6 compostDesc = new H6("Food scraps, soiled paper, & yard trimmings go in the compost cart. Want to compost? [Test](Google.com)");
+        H6 compostDesc = new H6("Food scraps, soiled paper, & yard trimmings go in the compost cart.Common composting items can be banana peels,grass clippings and eggshells.");
         Compost.add(CompostImg);
         Compost.add(compostDesc);
         H6 trashDesc = new H6("Paper, cardboard, glass bottles, aluminum/tin cans, hard plastics, bundled plastic bags & thin (film) plastics go into the recyclables cart.");
         Trash.add(TrashImg);
         Trash.add(trashDesc);
-        H6 recycleDesc = new H6("What is trash? Not much! Cat litter, ceramics, & broken glass to name a few.  Less of these items placed in the landfill cart the better.");
+        H6 recycleDesc = new H6("What is trash? Not much! Cat litter, ceramics, & broken glass to name a few. Less of these items placed in the landfill cart the better. Try to re-use as many of these items instead of throwing them away.");
         Recycle.add(RecycleImage);
         Recycle.add(recycleDesc);
 

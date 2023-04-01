@@ -40,8 +40,8 @@ public class MainLayout extends AppLayout {
     private void addDrawerContent() {
         H1 appName = new H1("Litter Logic");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
-        Image logo = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Litter%20Logic-1.jpg?raw=true","Logo");
-        logo.setHeight("25px");
+        Image logo = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Litter%20Logic-1.png?raw=true","Logo");
+        logo.setHeight("110px");
         Header header = new Header(appName,logo);
 
         Scroller scroller = new Scroller(createNavigation());
@@ -54,7 +54,7 @@ public class MainLayout extends AppLayout {
         // For documentation, visit https://github.com/vaadin/vcf-nav#readme
         AppNav nav = new AppNav();
 
-        nav.addItem(new AppNavItem("Trash Sorter", TrashSorterView.class, LineAwesomeIcon.CAMERA_SOLID.create()));
+        nav.addItem(new AppNavItem("Trash Sorter", TrashSorterView.class, LineAwesomeIcon.TRASH_SOLID.create()));
         nav.addItem(new AppNavItem("Trash Info", TrashInfoView.class, LineAwesomeIcon.INFO_CIRCLE_SOLID.create()));
         nav.addItem(new AppNavItem("About", AboutView.class, LineAwesomeIcon.ADDRESS_CARD_SOLID.create()));
 
