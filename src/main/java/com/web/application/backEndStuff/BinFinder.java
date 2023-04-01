@@ -42,6 +42,7 @@ public class BinFinder {
     };
 
     String[] recycleKeywords = {
+            "carton",
             "bottle",
             "paper",
             "cardboard",
@@ -59,10 +60,16 @@ public class BinFinder {
             "jar",
             "magazine",
             "hdpe",
-            "newspaper"
+            "cup",
+            "polyethylene",
+            "pet",
+            "pp"
     };
 
     String[] compostKeyWord = {
+            "putrid",
+            "rot",
+            "expire",
             "rind",
             "cheese",
             "rice",
