@@ -25,6 +25,9 @@ import com.vaadin.flow.component.textfield.TextField;
 
 import java.awt.*;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
+import java.util.Date;
 
 import com.web.application.backEndStuff.BinFinder;
 
@@ -34,7 +37,7 @@ import com.web.application.backEndStuff.BinFinder;
 public class TrashSorterView extends VerticalLayout {
 
     public TrashSorterView() {
-
+        HorizontalLayout resultLayout = new HorizontalLayout();
         VerticalLayout trashinputLayout = new VerticalLayout();
         setSpacing(true);
         TextField trashText = new TextField("Trash Description");
@@ -53,11 +56,17 @@ public class TrashSorterView extends VerticalLayout {
         Title.getStyle().set("color", "green");
         Span status = new Span("Pending input text....");
         H3 result = new H3();
+        H3 resultEmoji = new H3();
         Paragraph resultDesc = new Paragraph();
         Div spacer = new Div();
         spacer.setHeight("30px");
         status.getElement().getThemeList().add("badge contrast primary");
-       //Add components
+        Icon trashIcon = new Icon(VaadinIcon.TRASH);
+        Icon recycleIcon = new Icon(VaadinIcon.RECYCLE);
+        Icon compostIcon = new Icon(String.valueOf(LineAwesomeIcon.TREE_SOLID));
+        Icon ewasteIcon = new Icon(String.valueOf(LineAwesomeIcon.BATTERY_HALF_SOLID));
+
+        //Add components
        layout.add(Title);
        layout.add(Desc);
        layout.add(status);
@@ -111,12 +120,34 @@ public class TrashSorterView extends VerticalLayout {
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 resultDesc.setText(binDesc);
-                result.setText(foundBin);
 
+
+                if (result.equals("Recycling")) {
+                    resultEmoji.setText("♻️");
+                    result.setText(foundBin+" "+resultEmoji);
+                } else if (result.equals("Trash")) {
+                    resultEmoji.setText("\uD83D\uDDD1️");
+                    result.setText(foundBin+" "+resultEmoji);
+                } else if (result.equals("Compost")){
+                    resultEmoji.setText("\uD83C\uDF3F");
+                    result.setText(foundBin+" "+resultEmoji);
+                } else if (result.equals("E-Waste")){
+                    resultEmoji.setText("\uD83D\uDD0B");
+                    result.setText(foundBin+" "+resultEmoji);
+                }
+                result.setText(foundBin);
                 if (foundBin.equals("No keywords detected")){
-                    status.setText("No Keywords");
+                    status.setText("No Keywords \uD83D\uDFE5");
                 } else {
-                    status.setText("Sorted");
+                    SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm aa");
+                    Date date = new Date();
+                    String time = formatTime.format(date);
+
+
+                    status.setText("Sorted \uD83D\uDCC1 " + "generated time : "+ time + " \uD83D\uDD70️");
+
+
+
                 }
             }
         });

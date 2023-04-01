@@ -21,7 +21,9 @@ public class BinFinder {
             "electronic",
             "android",
             "tech",
-            "desktop"
+            "desktop",
+            "tv",
+            "acid"
     };
 
     String[] trashKeyword = {
@@ -85,7 +87,9 @@ public class BinFinder {
             "beef",
             "ham",
             "food",
-            "branch"
+            "branch",
+            "banana",
+            "pulp"
     };
 
 
@@ -104,8 +108,8 @@ public class BinFinder {
             case "Recycling":
                 return "The goal of recycling is to reuse old material. Recyclable items can be quite picky, especially since they are \n" +
                        "compacted into huge cubes before shipping, and a single contaminant can cause the whole cube to go to the landfill.\n" +
-                       "Thus recycling can be very picky, with different types of plastic being allowed in different rejoins. Especially for \n" +
-                       "plastic, it is important to check local guidelines to see whether it is okay to recycle. Recycling can be handled in \n" +
+                       "Cardboard should be compacted before being put in the recycling bin and no broken glass is allowed.\n" +
+                       "For plastics, it is important to check local guidelines to see whether it is okay to recycle. Recycling can be handled in \n" +
                         "much the same way as compost, except it's bin color is blue";
             case "Trash":
                 return "Trash is a last ditch effort to find a home for waste with nowhere else to go. Trash can be almost anything, though not\n" +
@@ -142,7 +146,6 @@ public class BinFinder {
 
         for (String keyword : compostKeyWord) {
             if(input.contains(keyword)){
-                //System.out.println("e");
                 return "Compost";
             }
         }

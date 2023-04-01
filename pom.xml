@@ -53,6 +53,11 @@
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>de.sh.deepspeechrecognition</groupId>
+            <artifactId>deepspeech-speech-recognition</artifactId>
+            <version>1.0.3</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.theokanning.openai-gpt3-java/service -->
         <dependency>
             <groupId>com.theokanning.openai-gpt3-java</groupId>
@@ -154,6 +159,9 @@
                         </exclusion>
                     </exclusions>
                 </dependency>
+
+
+
             </dependencies>
             <build>
                 <plugins>
@@ -217,6 +225,7 @@
                         </configuration>
                     </plugin>
                 </plugins>
+
             </build>
         </profile>
 
