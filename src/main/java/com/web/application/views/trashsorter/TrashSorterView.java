@@ -37,6 +37,7 @@ public class TrashSorterView extends VerticalLayout {
         VerticalLayout trashinputLayout = new VerticalLayout();
         setSpacing(true);
         TextField trashText = new TextField("Trash Description");
+        trashText.setPlaceholder("Insert Description here!");
         trashText.setHeight("500px");
         trashText.setClearButtonVisible(true);
         trashText.setEnabled(true);
@@ -48,10 +49,10 @@ public class TrashSorterView extends VerticalLayout {
         imgDesc.setHeight("300px");
         imgDesc.setWidth("350px");
        VerticalLayout layout = new VerticalLayout();
-        Title.getStyle().set("color", "blue");
+        Title.getStyle().set("color", "green");
         Span status = new Span("Pending input text....");
-        H5 result = new H5();
-        H6 resultDesc = new H6();
+        H3 result = new H3();
+        Paragraph resultDesc = new Paragraph();
         Div spacer = new Div();
         spacer.setHeight("30px");
         status.getElement().getThemeList().add("badge contrast primary");
@@ -79,8 +80,9 @@ public class TrashSorterView extends VerticalLayout {
 
             BinFinder binFinder = new BinFinder();
 
-            if (trashText.getValue() == null){
+            if (trashText.getValue().equals("")){
                 System.out.println("null");
+                status.setText("No Input");
             } else{
                 System.out.println(trashText.getValue());
                String foundBin = binFinder.findBin(trashText.getValue());
@@ -88,6 +90,12 @@ public class TrashSorterView extends VerticalLayout {
                 String binDesc = binFinder.getBinDisc(foundBin);
                 resultDesc.setText(binDesc);
                 result.setText(foundBin);
+
+                if (foundBin.equals("No keywords detected")){
+                    status.setText("No Keywords");
+                } else {
+                    status.setText("Sorted");
+                }
             }
         });
 

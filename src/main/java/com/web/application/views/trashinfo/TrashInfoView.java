@@ -17,15 +17,17 @@ public class TrashInfoView extends VerticalLayout {
         VerticalLayout layout = new VerticalLayout();
         VerticalLayout layoutInfoImg = new VerticalLayout();
         HorizontalLayout TitleLayout = new HorizontalLayout();
+        Div spacer2 = new Div();
+        spacer2.setHeight("300px");
         H1 Title = new H1("Trash Info");
         Image infoIcn = new Image("https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png","Info Icon");
         H4 description = new H4("Learning about disposing waste can be a daunting task but bellow is some useful information about waste");
         Image CompostInfoImg = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Compostable.png?raw=true","Compost Info Image");
         Image RecycleInfoImg = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Recyclable.png?raw=true","Compost Info Image");
         Image TrashInfoImg = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Trash.png?raw=true","Compost Info Image");
-        CompostInfoImg.setHeight("100px");
-        RecycleInfoImg.setHeight("100px");
-        TrashInfoImg.setHeight("100px");
+        CompostInfoImg.setHeight("550px");
+        RecycleInfoImg.setHeight("550px");
+        TrashInfoImg.setHeight("550px");
 
         infoIcn.setHeight("40px");
         TitleLayout.add(infoIcn);
@@ -55,13 +57,13 @@ public class TrashInfoView extends VerticalLayout {
         Image TrashImg = new Image("https://www.recology.com/wp-content/uploads/2016/10/RecycleBin.jpg","Trash Image");
         Image RecycleImage = new Image("https://www.recology.com/wp-content/uploads/2016/10/LandfillBin.jpg","Recycle Image");
 
-        H6 compostDesc = new H6("Food scraps, soiled paper, & yard trimmings go in the compost cart.Common composting items can be banana peels,grass clippings and eggshells.");
+        Paragraph compostDesc = new Paragraph("Food scraps, soiled paper, & yard trimmings go in the compost cart.Common composting items can be banana peels,grass clippings and eggshells.");
         Compost.add(CompostImg);
         Compost.add(compostDesc);
-        H6 trashDesc = new H6("Paper, cardboard, glass bottles, aluminum/tin cans, hard plastics, bundled plastic bags & thin (film) plastics go into the recyclables cart.");
+        Paragraph trashDesc = new Paragraph("Paper, cardboard, glass bottles, aluminum/tin cans, hard plastics, bundled plastic bags & thin (film) plastics go into the recyclables cart.");
         Trash.add(TrashImg);
         Trash.add(trashDesc);
-        H6 recycleDesc = new H6("What is trash? Not much! Cat litter, ceramics, & broken glass to name a few. Less of these items placed in the landfill cart the better. Try to re-use as many of these items instead of throwing them away.");
+        Paragraph recycleDesc = new Paragraph("What is trash? Not much! Cat litter, ceramics, & broken glass to name a few. Less of these items placed in the landfill cart the better. Try to re-use as many of these items instead of throwing them away.");
         Recycle.add(RecycleImage);
         Recycle.add(recycleDesc);
 
@@ -81,20 +83,23 @@ public class TrashInfoView extends VerticalLayout {
 
 
 
-        add(mainTrashlayout);
+        layoutInfoImg.add(spacer2);
 
-        layout.add(CompostInfoImg);
+        layoutInfoImg.add(CompostInfoImg);
 
-        layout.add(spacer);
+        layoutInfoImg.add(spacer2);
 
-        layout.add(RecycleInfoImg);
+        layoutInfoImg.add(RecycleInfoImg);
 
 
-        layout.add(spacer);
+        layoutInfoImg.add(spacer2);
 
-        layout.add(TrashInfoImg);
+        layoutInfoImg.add(TrashInfoImg);
 
+        layoutInfoImg.add(spacer2);
         add(layout);
+        add(mainTrashlayout);
+        add(layoutInfoImg);
     }
 
 }

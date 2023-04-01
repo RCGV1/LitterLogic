@@ -5,6 +5,7 @@ public class BinFinder {
     String[] ewasteKeywords = {
             "chromebook",
             "battery",
+            "batteries",
             "laptop",
             "computer",
             "chip",

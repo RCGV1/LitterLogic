@@ -1,8 +1,10 @@
 package com.web.application.views.about;
 
+import com.vaadin.flow.component.html.H1;
 import com.vaadin.flow.component.html.H2;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.html.Paragraph;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
@@ -14,21 +16,26 @@ import com.web.application.views.MainLayout;
 public class AboutView extends VerticalLayout {
 
     public AboutView() {
-        setSpacing(false);
+     VerticalLayout layout = new VerticalLayout();
+        H1 Title = new H1("About This Project");
+        Title.getStyle().set("color", "green");
 
-        Image img = new Image("images/empty-plant.png", "placeholder plant");
-        img.setWidth("200px");
-        add(img);
+        H2 desc = new H2("This project was made for Wilhacks 4.0 by :");
 
-        H2 header = new H2("This place intentionally left empty");
-        header.addClassNames(Margin.Top.XLARGE, Margin.Bottom.MEDIUM);
-        add(header);
-        add(new Paragraph("It’s a place where you can grow your own UI 🤗"));
 
-        setSizeFull();
-        setJustifyContentMode(JustifyContentMode.CENTER);
-        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        getStyle().set("text-align", "center");
+
+        layout.add(Title);
+        layout.add(desc);
+
+        //Properties
+        layout.setSpacing(true);
+        layout.setAlignItems(Alignment.CENTER);
+        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+
+        add(layout);
+
+
+
     }
 
 }
