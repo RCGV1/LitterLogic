@@ -3,9 +3,10 @@ package com.web.application.backEndStuff;
 public class BinFinder {
 
     String[] ewasteKeywords = {
+            "double a's",
+            "aa",
             "chromebook",
             "battery",
-            "batteries",
             "laptop",
             "computer",
             "chip",
@@ -20,14 +21,7 @@ public class BinFinder {
             "electronic",
             "android",
             "tech",
-            "desktop",
-            "samsung",
-            "lithium",
-            "alkaline",
-            "zinc",
-            "lead",
-            "electronic",
-            "tv"
+            "desktop"
     };
 
     String[] trashKeyword = {
@@ -42,15 +36,7 @@ public class BinFinder {
             "plastic container",
             "trash",
             "rubbish",
-            "garbage",
-            "styrofoam",
-            "vase",
-            "glove",
-            "dish",
-            "pot",
-
-
-
+            "garbage"
     };
 
     String[] recycleKeywords = {
@@ -73,13 +59,12 @@ public class BinFinder {
             "magazine",
             "hdpe",
             "cup",
-            "polyethylene",
-            "shampoo"
+            "polyethylene"
     };
 
     String[] compostKeyWord = {
             "putrid",
-            "rotting",
+            "rot",
             "expire",
             "rind",
             "cheese",
@@ -99,15 +84,7 @@ public class BinFinder {
             "beef",
             "ham",
             "food",
-            "branch",
-            "tree",
-            "organic",
-            "pulp",
-            "scrap",
-            "coffee",
-            "bone",
-            "flower",
-            "plant"
+            "branch"
     };
 
 
@@ -119,23 +96,22 @@ public class BinFinder {
         switch (bin){
             case "E-Waste":
                 return "This category contains all electronics, like computers, speakers, and the like.\n" +
-                       "Depending on where you are and what it is, there may be different ways of disposing of it, such as bulk pickup for a TV screen.\n"+
-                        "Please dispose of these items properly as they contain toxic and flammable batteries which can explode (DO NOT THROW IN TRASH).";
+                       "Depending on where you are and what it is, there may be different ways of disposing of it, such as bulk pickup for a TV screen.";
             case "Compost":
                 return "Compost includes all things organic, which is to say alive or previously alive, like moldy toast or cut grass.\n" +
-                       "Compost can be disposed of in your own household compost container or in the green bin.";
+                       "Compost can be disposed of by simple virtue of household bin, specifically the green one.";
             case "Recycling":
-                return "The goal of recycling is to reuse old material. Recyclable items can be quite picky, especially since they are \n" +
+                return "The goal of recycling i tue reuse old material. Recyclable items can be quite picky, especially since they are \n" +
                        "compacted into huge cubes before shipping, and a single contaminant can cause the whole cube to go to the landfill.\n" +
                        "Thus recycling can be very picky, with different types of plastic being allowed in different rejoins. Especially for \n" +
                        "plastic, it is important to check local guidelines to see whether it is okay to recycle. Recycling can be handled in \n" +
                         "much the same way as compost, except it's bin color is blue";
             case "Trash":
-                return "Before throwing something away in the trash consider if you can reuse the object. Trash can be almost anything, though not\n" +
+                return "Trash is a last ditch effort to find a home for waste with nowhere else to go. Trash can be almost anything, though not\n" +
                         "E-Waste. However, the fact that it typically ends up either burned or in landfills means that it is not that great for\n" +
-                        "the environment, or the economy, as any material thrown away tends to be taken out of circulation forever";
+                        "the enviroment, or the economy, as any material thrown away tends to be taken out of circulation forever";
             case "No keywords detected":
-                return "Nothing stood ot to us from the prompt. Perhaps try again with a broad discription of what your item is, like \"plastic \n" +
+                return "Nothing stood out to us from the prompt. Perhaps try again with a broad discription of what your item is, like \"plastic \n" +
                         "bag\" or \"egg carton\"";
             default:
                 throw new IllegalArgumentException("No recognised bin.");
@@ -159,13 +135,13 @@ public class BinFinder {
 
         for (String keyword : recycleKeywords) {
             if(input.contains(keyword)){
-                System.out.println(keyword);
                 return "Recycling";
             }
         }
 
         for (String keyword : compostKeyWord) {
             if(input.contains(keyword)){
+                System.out.println("e");
                 return "Compost";
             }
         }
