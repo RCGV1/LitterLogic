@@ -45,7 +45,7 @@ public class TrashSorterView extends VerticalLayout {
         trashText.setHeight("500px");
         trashText.setClearButtonVisible(true);
         trashText.setEnabled(true);
-        trashText.setWidth("500px");
+        trashText.setWidth("300px");
         H1 Title = new H1("Trash Sorter");
         Button search = new Button("Search");
         search.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
@@ -59,7 +59,7 @@ public class TrashSorterView extends VerticalLayout {
         H3 resultEmoji = new H3();
         Paragraph resultDesc = new Paragraph();
         Div spacer = new Div();
-        spacer.setHeight("30px");
+        spacer.setHeight("10px");
         status.getElement().getThemeList().add("badge contrast primary");
         Icon trashIcon = new Icon(VaadinIcon.TRASH);
         Icon recycleIcon = new Icon(VaadinIcon.RECYCLE);
@@ -98,12 +98,22 @@ public class TrashSorterView extends VerticalLayout {
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 resultDesc.setText(binDesc);
-                result.setText(foundBin);
 
+
+
+                result.setText(foundBin);
                 if (foundBin.equals("No keywords detected")){
-                    status.setText("No Keywords");
+                    status.setText("No Keywords \uD83D\uDFE5");
                 } else {
-                    status.setText("Sorted");
+                    SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm aa");
+                    Date date = new Date();
+                    String time = formatTime.format(date);
+
+
+                    status.setText("Sorted \uD83D\uDCC1 " + "generated time : "+ time + " \uD83D\uDD70️");
+
+
+
                 }
             }
                 });
@@ -122,19 +132,7 @@ public class TrashSorterView extends VerticalLayout {
                 resultDesc.setText(binDesc);
 
 
-                if (result.equals("Recycling")) {
-                    resultEmoji.setText("♻️");
-                    result.setText(foundBin+" "+resultEmoji);
-                } else if (result.equals("Trash")) {
-                    resultEmoji.setText("\uD83D\uDDD1️");
-                    result.setText(foundBin+" "+resultEmoji);
-                } else if (result.equals("Compost")){
-                    resultEmoji.setText("\uD83C\uDF3F");
-                    result.setText(foundBin+" "+resultEmoji);
-                } else if (result.equals("E-Waste")){
-                    resultEmoji.setText("\uD83D\uDD0B");
-                    result.setText(foundBin+" "+resultEmoji);
-                }
+
                 result.setText(foundBin);
                 if (foundBin.equals("No keywords detected")){
                     status.setText("No Keywords \uD83D\uDFE5");
