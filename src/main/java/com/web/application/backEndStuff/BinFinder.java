@@ -130,7 +130,7 @@ public class BinFinder {
 
         for (String keyword : recycleKeywords) {
             if(input.contains(keyword)){
-                return "recycle";
+                return "recycling";
             }
         }
 
