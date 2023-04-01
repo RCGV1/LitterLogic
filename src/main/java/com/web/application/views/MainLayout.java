@@ -3,10 +3,7 @@ package com.web.application.views;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
-import com.vaadin.flow.component.html.Footer;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Header;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
@@ -43,7 +40,8 @@ public class MainLayout extends AppLayout {
     private void addDrawerContent() {
         H1 appName = new H1("Litter Logic");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
-        Header header = new Header(appName);
+        Image logo = new Image("Assets/Litter Logic-1.jpg","Logo");
+        Header header = new Header(appName,logo);
 
         Scroller scroller = new Scroller(createNavigation());
 
