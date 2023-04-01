@@ -101,7 +101,8 @@ public class BinFinder {
         switch (bin){
             case "E-Waste":
                 return "This category contains all electronics, like computers, speakers, and the like.\n" +
-                       "Depending on where you are and what it is, there may be different ways of disposing of it, such as bulk pickup for a TV screen.";
+                       "Depending on where you are and what it is, there may be different ways of disposing of it, such as bulk pickup for a TV screen.\n"+
+                        "These items contain batteries which are toxic and flammable.Do not place E-Waste in the trash as they can explode.Research local laws and regulations on how to dispose them.";
             case "Compost":
                 return "Compost includes all things organic, which is to say alive or previously alive, like moldy toast or cut grass.\n" +
                        "Compost can be disposed of by simple virtue of household bin, specifically the green one.";

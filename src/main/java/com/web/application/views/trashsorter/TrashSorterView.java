@@ -68,6 +68,7 @@ public class TrashSorterView extends VerticalLayout {
         Icon compostIcon = new Icon(String.valueOf(LineAwesomeIcon.TREE_SOLID));
         Icon ewasteIcon = new Icon(String.valueOf(LineAwesomeIcon.BATTERY_HALF_SOLID));
 
+
         //Add components
        layout.add(Title);
        layout.add(Desc);
@@ -75,7 +76,7 @@ public class TrashSorterView extends VerticalLayout {
         layout.add(imgDesc);
         layout.add(spacer);
         layout.add(result);
-
+        layout.add(resultDesc);
         layout.add(search,trashText);
 
         Anchor anchor = new Anchor("/Trash-Info", "Learn more about trash");
@@ -99,7 +100,9 @@ public class TrashSorterView extends VerticalLayout {
                 String foundBin = binFinder.findBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
-                resultDesc.setText(binDesc);
+                trashHelperBin.add(binDesc);
+                resultDesc.setText("Created by Trash Adviser™ \uD83D\uDC68\u200D\uD83C\uDFEB :"+ binDesc);
+
 
 
 
@@ -132,9 +135,7 @@ public class TrashSorterView extends VerticalLayout {
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 trashHelperBin.add(binDesc);
-                Details trashHelper = new Details("Trash Advisor \uD83D\uDC68\u200D\uD83C\uDFEB", trashHelperBin);
-                trashHelper.setOpened(false);
-                layout.addComponentAtIndex(6,trashHelper);
+                resultDesc.setText("Created by Trash Adviser™ \uD83D\uDC68\u200D\uD83C\uDFEB :"+ binDesc);
 
 
 
