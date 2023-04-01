@@ -29,7 +29,7 @@ public class BinFinder {
     }
 
     public static String findBin (String input) {
-        OpenAiService oAi = new OpenAiService("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");
+        OpenAiService oAi = new OpenAiService("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");
         CompletionResult result = null;
         CompletionRequest prompt = null;
 
