@@ -29,56 +29,58 @@ public class BinFinder {
     }
 
     public static String findBin (String input) {
-        OpenAiService oAi = new OpenAiService("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");
+        OpenAiService oAi = new OpenAiService("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");
         CompletionResult result = null;
         CompletionRequest prompt = null;
 
         //order: ewaste, compost, recycle, trash, other
 
+//        prompt = CompletionRequest.builder()
+//                .prompt("is a broken " + input + " typically ewaste?" +
+//                        "ewaste is limited in scope to strictly electronic devices or parts. things such as computer chips, batteries, laptops, servers" +
+//                        " (yes/no)")
+//                .model("text-davinci-003")
+//                .echo(false)
+//                .build();
+//        result = oAi.createCompletion(prompt);
         prompt = CompletionRequest.builder()
-                .prompt("is a " + input + " typically ewaste?" +
-                        "ewaste is limited in scope to strictly electronic devices or parts." +
-                        " (yes/no)")
+                .prompt("is a " + input + " an electronic device or part?(yes/no)")
                 .model("text-davinci-003")
                 .echo(false)
                 .build();
         result = oAi.createCompletion(prompt);
         for(CompletionChoice choice : result.getChoices()) {
-            if(choice.getText().contains("y") || choice.getText().contains("Y")) {
+            if(choice.getText().contains("yes") || choice.getText().contains("Yes")) {
                 return "ewaste";
             }
         }
 
         prompt = CompletionRequest.builder()
-                .prompt("is a " + input + " compostable? " +
-                        "compostables typically are limited to organic things, and something like a wrapper would not count" + "(yes/no)")
+                .prompt("is a " + input + " a plant, decomposable, OR an organic substance? (yes/no)")
                 .model("text-davinci-003")
                 .echo(false)
                 .build();
         result = oAi.createCompletion(prompt);
         for(CompletionChoice choice : result.getChoices()) {
-            if(choice.getText().contains("y") || choice.getText().contains("Y")) {
+            if(choice.getText().contains("yes") || choice.getText().contains("Yes")) {
                 return "compost";
             }
         }
 
         prompt = CompletionRequest.builder()
-                .prompt("is a " + input + " recyclable? " +
-                        "recyclables tend to include plastic, but typically food wrappers or containers cannot be recycled because they are considered contaminated, and must be thrown away. " +
-                        "water is an exception, though" +
-                        "(yes/no)")
+                .prompt("is a " + input + " made of metal, plastic, wood, glass, cardboard, or parper, not organic material, and recyclable? (yes/no)\n")
                 .model("text-davinci-003")
                 .echo(false)
                 .build();
         result = oAi.createCompletion(prompt);
         for(CompletionChoice choice : result.getChoices()) {
-            if(choice.getText().contains("y") || choice.getText().contains("Y")) {
+            if(choice.getText().contains("yes") || choice.getText().contains("Yes")) {
                 return "recycle";
             }
         }
 
         prompt = CompletionRequest.builder()
-                .prompt("can a " + input + " be thrown in the trash? (yes/no)")
+                .prompt("could a " + input + " be garbage? (yes/no)\n")
                 .model("text-davinci-003")
                 .echo(false)
                 .build();
