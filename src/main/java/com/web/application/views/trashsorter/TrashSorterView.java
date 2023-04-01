@@ -25,6 +25,7 @@ import java.awt.*;
 import java.io.InputStream;
 
 import static com.web.application.backEndStuff.BinFinder.findBin;
+import static com.web.application.backEndStuff.BinFinder.frontTest;
 
 @PageTitle("Trash Sorter")
 @Route(value = "Trash-Sorter", layout = MainLayout.class)
@@ -49,6 +50,7 @@ public class TrashSorterView extends VerticalLayout {
        VerticalLayout layout = new VerticalLayout();
         Title.getStyle().set("color", "blue");
         Span status = new Span("Pending input text....");
+        H5 result = new H5();
 
         Div spacer = new Div();
         spacer.setHeight("30px");
@@ -59,11 +61,13 @@ public class TrashSorterView extends VerticalLayout {
        layout.add(status);
         layout.add(imgDesc);
         layout.add(spacer);
-       layout.add(search,trashText);
+        layout.add(result);
+        layout.add(search,trashText);
 
+        Anchor anchor = new Anchor("/Trash-Info", "Learn more about trash");
+        anchor.getElement().setAttribute("target", "_Trash-Info");
 
-
-
+        layout.add((anchor));
         //Properties
        layout.setSpacing(true);
        layout.setAlignItems(Alignment.CENTER);
@@ -75,10 +79,13 @@ public class TrashSorterView extends VerticalLayout {
             if (trashText.getValue() == null){
                 System.out.println("null");
             } else{
-               String foundBin = findBin(trashText.getValue());
+               String foundBin = frontTest(trashText.getValue());
                 System.out.println(foundBin);
+                result.setText(foundBin);
             }
         });
+
+
 
 
 
