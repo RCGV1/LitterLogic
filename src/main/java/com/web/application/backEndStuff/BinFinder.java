@@ -58,7 +58,8 @@ public class BinFinder {
             "chair",
             "jar",
             "magazine",
-            "hdpe"
+            "hdpe",
+            "newspaper"
     };
 
     String[] compostKeyWord = {
