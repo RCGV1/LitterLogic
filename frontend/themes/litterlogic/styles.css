@@ -1,5 +1,5 @@
 @import url('./main-layout.css');
-@import url('@fontsource/fira-sans');    html {
+@import url('@fontsource/dm-sans');    html {
       --lumo-font-size: 1rem;
       --lumo-font-size-xxxl: 3rem;
       --lumo-font-size-xxl: 2.25rem;
@@ -9,6 +9,6 @@
       --lumo-font-size-s: 1rem;
       --lumo-font-size-xs: 0.875rem;
       --lumo-font-size-xxs: 0.8125rem;
---lumo-font-family: Fira Sans;
+--lumo-font-family: DM Sans;
 
     }
