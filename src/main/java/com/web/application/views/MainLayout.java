@@ -40,7 +40,8 @@ public class MainLayout extends AppLayout {
     private void addDrawerContent() {
         H1 appName = new H1("Litter Logic");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
-        Image logo = new Image("Assets/Litter Logic-1.jpg","Logo");
+        Image logo = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Litter%20Logic-1.jpg?raw=true","Logo");
+        logo.setHeight("25px");
         Header header = new Header(appName,logo);
 
         Scroller scroller = new Scroller(createNavigation());
