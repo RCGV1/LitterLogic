@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  *
  */
 @SpringBootApplication
-@NpmPackage(value = "@fontsource/fira-sans", version = "4.5.0")
+@NpmPackage(value = "@fontsource/dm-sans", version = "4.5.0")
 @Theme(value = "litterlogic")
 public class Application implements AppShellConfigurator {
 

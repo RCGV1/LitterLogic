@@ -2,7 +2,7 @@
   "name": "no-name",
   "license": "UNLICENSED",
   "dependencies": {
-    "@fontsource/fira-sans": "4.5.0",
+    "@fontsource/dm-sans": "4.5.0",
     "@polymer/polymer": "3.5.1",
     "@vaadin-component-factory/vcf-nav": "1.0.6",
     "@vaadin/accordion": "24.0.2",
@@ -96,7 +96,7 @@
   },
   "vaadin": {
     "dependencies": {
-      "@fontsource/fira-sans": "4.5.0",
+      "@fontsource/dm-sans": "4.5.0",
       "@polymer/polymer": "3.5.1",
       "@vaadin-component-factory/vcf-nav": "1.0.6",
       "@vaadin/accordion": "24.0.2",
@@ -188,7 +188,7 @@
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "87919f067a98b56d833b9cf2d9c27b00122b028e4d428d692d2d0bc919db6b20"
+    "hash": "ea0d814d2e9e215283ebd643b312ac1fe97ad8f096479bf1f07c85b94c5d0cc0"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",
@@ -261,10 +261,10 @@
     "construct-style-sheets-polyfill": "$construct-style-sheets-polyfill",
     "lit": "$lit",
     "@polymer/polymer": "$@polymer/polymer",
-    "@fontsource/fira-sans": "$@fontsource/fira-sans",
     "@vaadin-component-factory/vcf-nav": "$@vaadin-component-factory/vcf-nav",
     "proj4": "$proj4",
     "@vaadin/vaadin-themable-mixin": "$@vaadin/vaadin-themable-mixin",
-    "date-fns": "$date-fns"
+    "date-fns": "$date-fns",
+    "@fontsource/dm-sans": "$@fontsource/dm-sans"
   }
 }
