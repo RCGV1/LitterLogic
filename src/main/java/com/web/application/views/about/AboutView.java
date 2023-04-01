@@ -23,8 +23,8 @@ public class AboutView extends VerticalLayout {
 
         H2 desc = new H2("This project was made for Wilhacks 4.0 by :");
 
-        H3 Title1 = new H3("Benjamin Faershtein");
-        H3 Title2 = new H3("Prateek Gupta");
+        H3 Title1 = new H3("Benjamin Faershtein \uD83D\uDC68\u200D\uD83D\uDCBB");
+        H3 Title2 = new H3("Prateek Gupta \uD83D\uDC68\u200D\uD83D\uDCBB");
         Paragraph desc1 = new Paragraph("Worked on the Front-end");
         Paragraph desc2 = new Paragraph("Worked on the Back-end");
 

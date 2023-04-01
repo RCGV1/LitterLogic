@@ -3,6 +3,7 @@ package com.web.application.views.trashsorter;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.Icon;
@@ -37,6 +38,7 @@ import com.web.application.backEndStuff.BinFinder;
 public class TrashSorterView extends VerticalLayout {
 
     public TrashSorterView() {
+        VerticalLayout trashHelperBin = new VerticalLayout();
         HorizontalLayout resultLayout = new HorizontalLayout();
         VerticalLayout trashinputLayout = new VerticalLayout();
         setSpacing(true);
@@ -73,7 +75,7 @@ public class TrashSorterView extends VerticalLayout {
         layout.add(imgDesc);
         layout.add(spacer);
         layout.add(result);
-        layout.add(resultDesc);
+
         layout.add(search,trashText);
 
         Anchor anchor = new Anchor("/Trash-Info", "Learn more about trash");
@@ -129,7 +131,11 @@ public class TrashSorterView extends VerticalLayout {
                String foundBin = binFinder.findBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
-                resultDesc.setText(binDesc);
+                trashHelperBin.add(binDesc);
+                Details trashHelper = new Details("Trash Advisor \uD83D\uDC68\u200D\uD83C\uDFEB", trashHelperBin);
+                trashHelper.setOpened(false);
+                layout.addComponentAtIndex(6,trashHelper);
+
 
 
 
