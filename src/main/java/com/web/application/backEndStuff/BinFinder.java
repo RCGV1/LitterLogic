@@ -11,11 +11,11 @@ import java.util.List;
 
 public class BinFinder {
 
-//    public static void main (String[] args) {
-//        System.out.println(findBin("plastic wrapper"));
-//    }
+    public static void main (String[] args) {
+        System.out.println(findBin("plastic bottle"));
+    }
     public static String findBin (String input) {
-        OpenAiService oAi = new OpenAiService("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");
+        OpenAiService oAi = new OpenAiService("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");
         CompletionResult result = null;
         CompletionRequest completionRequest = null;
 
@@ -23,7 +23,7 @@ public class BinFinder {
 
         completionRequest = CompletionRequest.builder()
                 .prompt("is a " + input + " typically ewaste?" +
-                        "ewaste is limited in scope to electronics by definition, and so while a battery would count, a wrapper would not" +
+                        "ewaste is limited in scope to strictly electronics. if it is not an electronic, it is not ewaste" +
                         " (yes/no)")
                 .model("text-davinci-003")
                 .echo(false)
