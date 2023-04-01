@@ -47,9 +47,8 @@ public class TrashSorterView extends VerticalLayout {
         Button search = new Button("Search");
         search.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         H3 Desc = new H3("Give us a description of trash and we will tell you what to do with it");
-        Image imgDesc = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/My%20project-1-2.jpg?raw=true","img Desc");
+        Image imgDesc = new Image("https://www.folsom.ca.us/home/showpublishedimage/2400/637964229514730000","img Desc");
         imgDesc.setHeight("300px");
-        imgDesc.setWidth("300px");
        VerticalLayout layout = new VerticalLayout();
         Title.getStyle().set("color", "green");
         Span status = new Span("Pending input text....");
