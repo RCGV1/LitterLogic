@@ -15,10 +15,18 @@ public class TrashInfoView extends VerticalLayout {
 
     public TrashInfoView() {
         VerticalLayout layout = new VerticalLayout();
+        VerticalLayout layoutInfoImg = new VerticalLayout();
         HorizontalLayout TitleLayout = new HorizontalLayout();
         H1 Title = new H1("Trash Info");
         Image infoIcn = new Image("https://upload.wikimedia.org/wikipedia/commons/4/43/Minimalist_info_Icon.png","Info Icon");
         H4 description = new H4("Learning about disposing waste can be a daunting task but bellow is some useful information about waste");
+        Image CompostInfoImg = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Compostable.png?raw=true","Compost Info Image");
+        Image RecycleInfoImg = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Recyclable.png?raw=true","Compost Info Image");
+        Image TrashInfoImg = new Image("https://github.com/RCGV1/LitterLogic/blob/main/Assets/Trash.png?raw=true","Compost Info Image");
+        CompostInfoImg.setHeight("100px");
+        RecycleInfoImg.setHeight("100px");
+        TrashInfoImg.setHeight("100px");
+
         infoIcn.setHeight("40px");
         TitleLayout.add(infoIcn);
         TitleLayout.add(Title);
@@ -31,6 +39,9 @@ public class TrashInfoView extends VerticalLayout {
         layout.setAlignItems(Alignment.CENTER);
         TitleLayout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+
+        layoutInfoImg.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
+        layoutInfoImg.setAlignItems(Alignment.CENTER);
 
 
         //Trash Layout
@@ -66,9 +77,24 @@ public class TrashInfoView extends VerticalLayout {
 
 
 
-        add(layout);
+
+
+
 
         add(mainTrashlayout);
+
+        layout.add(CompostInfoImg);
+
+        layout.add(spacer);
+
+        layout.add(RecycleInfoImg);
+
+
+        layout.add(spacer);
+
+        layout.add(TrashInfoImg);
+
+        add(layout);
     }
 
 }
