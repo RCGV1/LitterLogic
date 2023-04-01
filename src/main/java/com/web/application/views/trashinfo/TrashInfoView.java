@@ -56,7 +56,9 @@ public class TrashInfoView extends VerticalLayout {
         Image CompostImg = new Image("https://www.recology.com/wp-content/uploads/2016/10/CompostBin.jpg","Compost Image");
         Image TrashImg = new Image("https://www.recology.com/wp-content/uploads/2016/10/RecycleBin.jpg","Trash Image");
         Image RecycleImage = new Image("https://www.recology.com/wp-content/uploads/2016/10/LandfillBin.jpg","Recycle Image");
-
+        CompostImg.setHeight("50px");
+        TrashImg.setHeight("50px");
+        TrashImg.setHeight("50px");
         Paragraph compostDesc = new Paragraph("Food scraps, soiled paper, & yard trimmings go in the compost cart.Common composting items can be banana peels,grass clippings and eggshells.");
         Compost.add(CompostImg);
         Compost.add(compostDesc);
