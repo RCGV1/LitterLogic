@@ -4,7 +4,7 @@ public class BinFinder {
 
     String[] ewasteKeywords = {
             "double a's",
-            "aa",
+            "aa ",
             "chromebook",
             "battery",
             "laptop",
@@ -63,6 +63,7 @@ public class BinFinder {
     };
 
     String[] compostKeyWord = {
+            "banana",
             "putrid",
             "rot",
             "expire",
@@ -109,7 +110,7 @@ public class BinFinder {
             case "Trash":
                 return "Trash is a last ditch effort to find a home for waste with nowhere else to go. Trash can be almost anything, though not\n" +
                         "E-Waste. However, the fact that it typically ends up either burned or in landfills means that it is not that great for\n" +
-                        "the enviroment, or the economy, as any material thrown away tends to be taken out of circulation forever";
+                        "the environment, or the economy, as any material thrown away tends to be taken out of circulation forever";
             case "No keywords detected":
                 return "Nothing stood out to us from the prompt. Perhaps try again with a broad discription of what your item is, like \"plastic \n" +
                         "bag\" or \"egg carton\"";
