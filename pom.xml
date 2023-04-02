@@ -21,6 +21,9 @@
         <version>3.0.5</version>
     </parent>
 
+
+
+
     <repositories>
         <repository>
             <id>Vaadin Directory</id>
@@ -41,6 +44,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
 
             <dependency>
                 <groupId>com.vaadin</groupId>
@@ -74,6 +78,11 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.opennlp</groupId>
+            <artifactId>opennlp-tools</artifactId>
+            <version>1.8.4</version>
         </dependency>
         <dependency>
             <groupId>com.google.cloud</groupId>

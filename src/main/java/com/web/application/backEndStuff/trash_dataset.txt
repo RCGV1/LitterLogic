@@ -1,0 +1,3 @@
+recycling plastic_bottle This is a plastic bottle that can be recycled
+compost apple_core This is an apple core that can be composted
+landfill styrofoam_cup This is a styrofoam cup that should go to landfill
