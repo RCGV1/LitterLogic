@@ -14,7 +14,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LableGeneratorCopied {
+@Deprecated
+public class OldLableGenerator {
     public String[] getLable (BufferedImage image) {
 
 
