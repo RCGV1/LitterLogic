@@ -3,7 +3,6 @@ package com.web.application.views.trashsorter;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
-import com.vaadin.flow.component.details.Details;
 import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.html.Image;
 import com.vaadin.flow.component.icon.Icon;
@@ -11,26 +10,16 @@ import com.vaadin.flow.component.icon.VaadinIcon;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.upload.Upload;
-import com.vaadin.flow.component.upload.receivers.MultiFileBuffer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
-import com.vaadin.flow.server.StreamResource;
-import com.vaadin.flow.theme.lumo.LumoIcon;
-import com.vaadin.flow.theme.lumo.LumoUtility.Margin;
 import com.web.application.backEndStuff.BinFinder;
 import com.web.application.views.MainLayout;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 import com.vaadin.flow.component.textfield.TextField;
 
-import java.awt.*;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.time.LocalTime;
 import java.util.Date;
-
-import com.web.application.backEndStuff.BinFinder;
 
 @PageTitle("Trash Sorter")
 @Route(value = "Trash-Sorter", layout = MainLayout.class)
@@ -102,7 +91,6 @@ public class TrashSorterView extends VerticalLayout {
                 String binDesc = binFinder.getBinDisc(foundBin);
                 trashHelperBin.add(binDesc);
                 resultDesc.setText("Created by Trash Adviser™ \uD83D\uDC68\u200D\uD83C\uDFEB :"+ binDesc);
-
 
 
 
