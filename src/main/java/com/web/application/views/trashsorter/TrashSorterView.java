@@ -24,6 +24,8 @@ import com.vaadin.flow.component.textfield.TextField;
 import java.awt.*;
 import java.io.InputStream;
 
+import static com.web.application.backEndStuff.BinFinder.findBin;
+
 @PageTitle("Trash Sorter")
 @Route(value = "Trash-Sorter", layout = MainLayout.class)
 @RouteAlias(value = "", layout = MainLayout.class)
@@ -68,7 +70,15 @@ public class TrashSorterView extends VerticalLayout {
        layout.setJustifyContentMode(FlexComponent.JustifyContentMode.CENTER);
         add(layout);
 
+        search.addClickListener(e -> {
 
+            if (trashText.getValue() == null){
+                System.out.println("null");
+            } else{
+               String foundBin = findBin(trashText.getValue());
+                System.out.println(foundBin);
+            }
+        });
 
 
 

@@ -15,7 +15,7 @@ public class BinFinder {
 //        System.out.println(findBin("plastic wrapper"));
 //    }
     public static String findBin (String input) {
-        OpenAiService oAi = new OpenAiService("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");
+        OpenAiService oAi = new OpenAiService("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");
         CompletionResult result = null;
         CompletionRequest completionRequest = null;
 
