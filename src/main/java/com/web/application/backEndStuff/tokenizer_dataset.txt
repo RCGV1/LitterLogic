@@ -1,0 +1,177 @@
+([ plastic_NN bags._NNS ])
+<: used_VBD :>
+([ dental_JJ floss_NN ])._.
+
+([ empty_JJ lipstick_NN tubes_NNS ])._.
+
+([ broken_JJ furniture_NN ])._.
+
+([ worn-out_JJ shoes_NNS ])._.
+
+([ used_JJ tissues_NNS ])._.
+
+([ rusty_JJ nails_NNS ])._.
+
+([ empty_JJ shampoo_NN bottles_NNS ])._.
+
+([ old_JJ towels_NNS ])._.
+
+([ broken_JJ toys._NNS ])
+<: expired_VBD :>
+([ food_NN ])._.
+
+([ empty_JJ deodorant_NN containers_NNS ])._.
+
+([ dirty_JJ diapers_NNS ])._.
+
+([ empty_JJ pill_NN bottles_NNS ])._.
+
+
+<: used_VBD :>
+([ paper_NN towels_NNS ])._.
+
+([ empty_JJ perfume_NN bottles_NNS ])._.
+
+([ old_JJ magazines_NNS ])._.
+
+
+<: expired_VBD :>
+([ makeup_NN ])._.
+
+([ used_JJ gum._NN ]) ([ old_JJ batteries_NNS ])._.
+
+([ broken_JJ glassware_NN ])._.
+
+([ worn-out_JJ backpacks_NNS ])._.
+
+([ expired_JJ medications_NNS ])._.
+
+([ old_JJ socks_NNS ])._.
+
+([ broken_JJ electronics_NNS ])._.
+
+([ empty_JJ laundry_NN detergent_NN bottles_NNS ])._.
+
+([ old_JJ toothbrushes_NNS ])._.
+
+([ banana_NN ])
+<: peels_VBZ :>
+._.
+
+([ apple_NN cores_NNS ])._.
+
+([ coffee_NN grounds_NNS ])._.
+
+([ tea_NN bags._NNS eggshells_NNS ])._.
+
+([ vegetable_NN scraps_NNS ])._.
+
+([ grass_NN clippings_NNS ])._.
+
+([ fallen_JJ leaves_NNS ])._.
+
+([ wood_JJ chips_NNS ])._.
+
+([ nut_NN shells_NNS ])._.
+
+([ pumpkin_NN seeds_NNS ])._.
+
+
+<: shredded_VBD :>
+([ paper_NN ])._.
+
+([ plant_NN trimmings_NNS ])._.
+
+([ wood_JJ ash._NN hay._NN straw_NN ])._.
+
+([ cotton_NN rags._NNS sawdust_NN ])._.
+
+([ cell_NN phones_NNS ])._.
+
+([ laptops_NNS ])._.
+
+([ printers_NNS ])._.
+
+([ monitors_NNS ])._.
+
+([ televisions_NNS ])._.
+
+([ chargers_NNS ])._.
+
+([ headphones_NN ])._.
+
+([ DVD_NNP players_NNS ])._.
+
+([ game_JJ consoles_NNS ])._.
+
+([ cameras_NNS ])._.
+
+([ ink_NN cartridges_NNS ])._.
+
+([ cables_NNS ])._.
+
+([ computer_NN mice._NNS keyboards_NNS ])._.
+
+([ speakers_NNS ])._.
+
+([ microwaves_NNS ])._.
+
+([ clock_NN radios_NNS ])._.
+
+([ VHS_NNP ])
+<: tapes_VBZ :>
+._.
+
+([ power_NN banks_NNS ])._.
+
+([ fax_NN machines_NNS ])._.
+
+([ hard_JJ drives_NNS ])._.
+
+([ plastic_JJ bottles_NNS ])._.
+
+([ aluminum_NN ])
+<: cans_VBZ :>
+._.
+
+([ glass_NN bottles_NNS ])._.
+
+([ cardboard_JJ boxes_NNS ])._.
+
+([ metal_NN cans._NNS paperboard_NN packaging_NN ])._.
+
+([ paper_NN bags._NNS ]) ([ plastic_JJ food_NN containers_NNS ])._.
+
+([ pizza_NN boxes_NNS ])._.
+
+([ plastic_JJ wrap._NN aluminum_NN foil._NN ]) ([ plastic_JJ utensils_NNS ])._.
+
+([ cardboard_JJ tubes_NNS ])._.
+
+([ paper_NN envelopes_NNS ])._.
+
+([ junk_NN mail_NN ])._.
+
+([ newspapers_NNS ])._.
+
+([ phone_NN books_NNS ])._.
+
+([ paperback_NN books_NNS ])._.
+
+([ catalogs_NNS ])._.
+
+([ paper_NN flyers_NNS ])._.
+
+([ plastic_JJ milk_NN ])
+<: jugs_VBZ :>
+._.
+
+([ yogurt_NN containers_NNS ])._.
+
+([ empty_JJ aerosol_NN ])
+<: cans_VBZ :>
+._.
+
+([ wine_NN bottles_NNS ])._.
+
+([ plastic_NN toys._NNS ])_.

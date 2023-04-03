@@ -5,45 +5,37 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 import opennlp.tools.doccat.*;
-import opennlp.tools.util.InputStreamFactory;
-import opennlp.tools.util.ObjectStream;
-import opennlp.tools.util.PlainTextByLineStream;
-import opennlp.tools.util.TrainingParameters;
+import opennlp.tools.util.*;
+import opennlp.tools.util.model.ModelUtil;
 
 public class TextClassifierTrainer {
 
     public static void main(String[] args) throws IOException {
         // Path to the training data file
         String trainingDataFilePath = "/Users/benfaer/IdeaProjects/LitterLogic/src/main/java/com/web/application/backEndStuff/trash_dataset.txt";
+        String modelPATH = "/Users/benfaer/IdeaProjects/LitterLogic/src/main/java/com/web/application/backEndStuff/models/modelTest.bin";
+        InputStreamFactory inputStreamFactory = new MarkableFileInputStreamFactory(new File(trainingDataFilePath));
+        ObjectStream<String> lineStream = new PlainTextByLineStream(inputStreamFactory, StandardCharsets.UTF_8);
+        ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineStream);
 
-        // Create an InputStreamFactory that wraps a FileInputStream with a BufferedInputStream
-        InputStreamFactory inputStreamFactory = new InputStreamFactory() {
-            public InputStream createInputStream() throws IOException {
-                return new BufferedInputStream(new FileInputStream(trainingDataFilePath));
-            }
-        };
+        // Use CUT_OFF as zero since we will use very few samples.
+        // BagOfWordsFeatureGenerator will treat each word as a feature. Since we have
+        // few samples, each feature/word will have small counts, so it won't meet high
+        // cutoff.
+        TrainingParameters params = ModelUtil.createDefaultTrainingParameters();
+        params.put(TrainingParameters.CUTOFF_PARAM, 0);
+        DoccatFactory factory = new DoccatFactory(new FeatureGenerator[]{new BagOfWordsFeatureGenerator()});
 
-        // Set up the training parameters
-        TrainingParameters trainingParameters = new TrainingParameters();
-        trainingParameters.put(TrainingParameters.ITERATIONS_PARAM, 10);
-        trainingParameters.put(TrainingParameters.CUTOFF_PARAM, 0);
+        // Train a model with classifications from above file.
+        DoccatModel model = DocumentCategorizerME.train("en", sampleStream, params, factory);
 
-        // Set up the feature generator
-        FeatureGenerator featureGenerator = new NGramFeatureGenerator(1, 2);
-
-        // Set up the document categorizer
-        DoccatFactory doccatFactory = new DoccatFactory(new FeatureGenerator[]{featureGenerator});
-        DoccatModel doccatModel = null;
-        try (ObjectStream<String> lineStream = new PlainTextByLineStream(inputStreamFactory, "UTF-8");
-             ObjectStream<DocumentSample> sampleStream = new DocumentSampleStream(lineStream)) {
-            doccatModel = DocumentCategorizerME.train("en", sampleStream, trainingParameters, doccatFactory);
-        }
+        // Serialize model to some file so that next time we don't have to again train a
+        // model. Next time We can just load this file directly into model.
+        model.serialize(new File(modelPATH));
 
 
-        // Save the trained model to a file
-        String modelFilePath = "/Users/benfaer/IdeaProjects/LitterLogic/src/main/java/com/web/application/backEndStuff/models/modelTest.bin";
-        doccatModel.serialize(new File(modelFilePath));
     }
 }

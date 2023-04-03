@@ -1,14 +1,5 @@
-plastic bottle cap	RECYCLING
-paper cup	TRASH
-cardboard box	RECYCLING
-metal can	RECYCLING
-plastic bag	TRASH
-glass bottle	RECYCLING
-aluminum foil	RECYCLING
-plastic wrapper	TRASH
-styrofoam cup	TRASH
-plastic utensils	TRASH
-plastic bottle	RECYCLING
-electronics	E-WASTE
-phone charger	E-WASTE
-battery	E-WASTE
+No-keywords-detected null
+Compost  plant. food. fruit. vegetable. egg. shell. eggs. eggshell. eggshells. fruits. fruit juice. fruit peel. fruit peels. fruit scraps. fruit skin. fruit skins. fruit waste. fruit. vegetable peel. vegetable peels. vegetable scraps. vegetable skin. vegetable skins. vegetable waste. vegetable. vegetable. yard waste. yard clippings. grass clippings. grass. leaves. leaf. tree. tree branch. tree branches. tree limb. tree limbs. tree. apple. apple core. peel. banana. banana peel. coffee. egg shell.
+Recycling plastic. cardboard. box. glass. metal. can. bottle. jar. paper. newspaper. magazine. book. envelope. mail. plastic bottle. cap. glass bottle. wine bottle. glass.
+Trash  chip bag. wrap. ceramic. dish. bag. straw. diaper. brush. toothbrush. used straw. soiled pizza-box. soiled item. plate. ceramic
+E-Waste  laptop. phone. battery. laptop charger. laptop battery. battery charger. battery. iphone. phone. samsung. lead. acid. battery. battery acid. batteries. chromebook. broken chromebook. samsung phone. android phone. old iphone.

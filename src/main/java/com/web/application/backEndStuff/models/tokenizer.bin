@@ -1,0 +1,55 @@
+([ plastic_NN bags._NNS ])
+<: used_VBD :>
+([ dental_JJ floss_NN ])._.
+
+([ empty_JJ lipstick_NN tubes_NNS ])._.
+
+([ broken_JJ furniture_NN ])._.
+
+([ worn-out_JJ shoes_NNS ])._.
+
+([ used_JJ tissues_NNS ])._.
+
+([ rusty_JJ nails_NNS ])._.
+
+([ empty_JJ shampoo_NN bottles_NNS ])._.
+
+([ old_JJ towels_NNS ])._.
+
+([ broken_JJ toys._NNS ])
+<: expired_VBD :>
+([ food_NN ])._.
+
+([ empty_JJ deodorant_NN containers_NNS ])._.
+
+([ dirty_JJ diapers_NNS ])._.
+
+([ empty_JJ pill_NN bottles_NNS ])._.
+
+
+<: used_VBD :>
+([ paper_NN towels_NNS ])._.
+
+([ empty_JJ perfume_NN bottles_NNS ])._.
+
+([ old_JJ magazines_NNS ])._.
+
+
+<: expired_VBD :>
+([ makeup_NN ])._.
+
+([ used_JJ gum._NN ]) ([ old_JJ batteries_NNS ])._.
+
+([ broken_JJ glassware_NN ])._.
+
+([ worn-out_JJ backpacks_NNS ])._.
+
+([ expired_JJ medications_NNS ])._.
+
+([ old_JJ socks_NNS ])._.
+
+([ broken_JJ electronics_NNS ])._.
+
+([ empty_JJ laundry_NN detergent_NN bottles_NNS ])._.
+
+([ old_JJ toothbrushes_NNS ])._.

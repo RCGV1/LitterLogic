@@ -14,6 +14,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.router.RouteAlias;
 import com.web.application.backEndStuff.BinFinder;
+import com.web.application.backEndStuff.TrashClassifier;
 import com.web.application.views.MainLayout;
 import org.vaadin.lineawesome.LineAwesomeIcon;
 import com.vaadin.flow.component.textfield.TextField;
@@ -86,7 +87,7 @@ public class TrashSorterView extends VerticalLayout {
                 status.setText("No Input");
             } else{
                 System.out.println(trashText.getValue());
-                String foundBin = binFinder.findBin(trashText.getValue());
+                String foundBin = TrashClassifier.findSmartBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 trashHelperBin.add(binDesc);
@@ -94,8 +95,9 @@ public class TrashSorterView extends VerticalLayout {
 
 
 
+
                 result.setText(foundBin);
-                if (foundBin.equals("No keywords detected")){
+                if (foundBin.equals("No-keywords-detected")){
                     status.setText("No Keywords \uD83D\uDFE5");
                 } else {
                     SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm aa");
@@ -119,7 +121,7 @@ public class TrashSorterView extends VerticalLayout {
                 status.setText("No Input");
             } else{
                 System.out.println(trashText.getValue());
-               String foundBin = binFinder.findBin(trashText.getValue());
+               String foundBin = TrashClassifier.findSmartBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 trashHelperBin.add(binDesc);
@@ -129,7 +131,7 @@ public class TrashSorterView extends VerticalLayout {
 
 
                 result.setText(foundBin);
-                if (foundBin.equals("No keywords detected")){
+                if (foundBin.equals("No-keywords-detected")){
                     status.setText("No Keywords \uD83D\uDFE5");
                 } else {
                     SimpleDateFormat formatTime = new SimpleDateFormat("hh.mm aa");
