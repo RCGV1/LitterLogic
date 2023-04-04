@@ -37,5 +37,11 @@ public class TextClassifierTrainer {
         model.serialize(new File(modelPATH));
 
 
+        // Test the model
+        System.out.println(TrashClassifier.findSmartBin("apple core"));
+        System.out.println(TrashClassifier.findSmartBin("plastic bottle cap"));
+        System.out.println(TrashClassifier.findSmartBin("disposable bag"));
+        System.out.println(TrashClassifier.findSmartBin("rotten meat"));
+
     }
 }

@@ -1,5 +1,6 @@
 package com.web.application.views.trashsorter;
 
+import com.vaadin.flow.component.Html;
 import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
@@ -57,6 +58,12 @@ public class TrashSorterView extends VerticalLayout {
         Icon recycleIcon = new Icon(VaadinIcon.RECYCLE);
         Icon compostIcon = new Icon(String.valueOf(LineAwesomeIcon.TREE_SOLID));
         Icon ewasteIcon = new Icon(String.valueOf(LineAwesomeIcon.BATTERY_HALF_SOLID));
+        Html embed = new Html("\n" +
+                "    _recollect_config = { area: \"Coquitlam\", name: \"wizard\", locale: \"en\" };\n" +
+                "\n" +
+                "\n" +
+                "</script>\n" +
+                "<script src=\"https://assets.us.recollect.net/api/widget.js\" charset=\"UTF-8\">");
 
 
         //Add components
@@ -68,6 +75,7 @@ public class TrashSorterView extends VerticalLayout {
         layout.add(result);
         layout.add(resultDesc);
         layout.add(search,trashText);
+        layout.add(embed);
 
         Anchor anchor = new Anchor("/Trash-Info", "Learn more about trash");
         anchor.getElement().setAttribute("target", "_Trash-Info");
@@ -87,7 +95,7 @@ public class TrashSorterView extends VerticalLayout {
                 status.setText("No Input");
             } else{
                 System.out.println(trashText.getValue());
-                String foundBin = TrashClassifier.findSmartBin(trashText.getValue());
+                String foundBin = binFinder.findBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 trashHelperBin.add(binDesc);
@@ -121,7 +129,7 @@ public class TrashSorterView extends VerticalLayout {
                 status.setText("No Input");
             } else{
                 System.out.println(trashText.getValue());
-               String foundBin = TrashClassifier.findSmartBin(trashText.getValue());
+               String foundBin = binFinder.findBin(trashText.getValue());
                 System.out.println(foundBin);
                 String binDesc = binFinder.getBinDisc(foundBin);
                 trashHelperBin.add(binDesc);

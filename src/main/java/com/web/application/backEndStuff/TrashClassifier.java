@@ -28,12 +28,10 @@ public class TrashClassifier {
         String allResults = categorizer.getAllResults(probabilities);
 
         // Print all the results
-        System.out.println("The trash is categorized as:");
-        System.out.println(allResults);
 
         // Get the top category
         String bestCategory = categorizer.getBestCategory(probabilities);
-        System.out.println("The most likely category is: " + bestCategory);
+
 
         return bestCategory;
     }

@@ -26,7 +26,13 @@ public class BinFinder {
             "acid"
     };
 
-    String[] trashKeyword = {
+    String[] ewasteRejectKeywords = {
+            "wrap",
+            "tape",
+            "glue"
+    };
+
+    String[] trashKeywords = {
             "wrapper",
             "ceramic",
             "plastic bag",
@@ -46,6 +52,12 @@ public class BinFinder {
             "incandescent",
             "cigarette",
             "dish"
+    };
+
+    String[] trashRejectKeywords = {
+            "recycl",
+            "cardboard",
+            "paper"
     };
 
     String[] recycleKeywords = {
@@ -70,10 +82,15 @@ public class BinFinder {
             "tupperware",
             "sticky note",
             "cap"
-
     };
 
-    String[] compostKeyWord = {
+    String[] recycleRejectKeywords = {
+            "wrapper",
+            "tape",
+            "glue"
+    };
+
+    String[] compostKeywords = {
             "banana",
             "putrid",
             "rot",
@@ -100,6 +117,12 @@ public class BinFinder {
             "banana",
             "pulp",
             "vegetable"
+    };
+
+    String[] compostRejectKeywords = {
+            "plastic",
+            "metal",
+            "paper"
     };
 
 
@@ -134,33 +157,74 @@ public class BinFinder {
         }
     }
 
-    public String findBin (String input) {
+    public String findBin(String input) {
         input = input.toLowerCase();
 
+        // Check for E-Waste
         for (String keyword : ewasteKeywords) {
-            if(input.contains(keyword)){
-                return "E-Waste";
+            if (input.contains(keyword)) {
+                boolean isRejected = false;
+                for (String reject : ewasteRejectKeywords) {
+                    if (input.contains(reject)) {
+                        isRejected = true;
+                        break; // Skip to the next keyword if input contains a reject keyword
+                    }
+                }
+                if (!isRejected) {
+                    return "E-Waste";
+                }
             }
         }
 
-        for (String keyword : trashKeyword) {
-            if(input.contains(keyword)){
-                return "Trash";
+        // Check for Trash
+        for (String keyword : trashKeywords) {
+            if (input.contains(keyword)) {
+                boolean isRejected = false;
+                for (String reject : trashRejectKeywords) {
+                    if (input.contains(reject)) {
+                        isRejected = true;
+                        break; // Skip to the next keyword if input contains a reject keyword
+                    }
+                }
+                if (!isRejected) {
+                    return "Trash";
+                }
             }
         }
 
+        // Check for Recycling
         for (String keyword : recycleKeywords) {
-            if(input.contains(keyword)){
-                return "Recycling";
+            if (input.contains(keyword)) {
+                boolean isRejected = false;
+                for (String reject : recycleRejectKeywords) {
+                    if (input.contains(reject)) {
+                        isRejected = true;
+                        break; // Skip to the next keyword if input contains a reject keyword
+                    }
+                }
+                if (!isRejected) {
+                    return "Recycling";
+                }
             }
         }
 
-        for (String keyword : compostKeyWord) {
-            if(input.contains(keyword)){
-                return "Compost";
+        // Check for Compost
+        for (String keyword : compostKeywords) {
+            if (input.contains(keyword)) {
+                boolean isRejected = false;
+                for (String reject : compostRejectKeywords) {
+                    if (input.contains(reject)) {
+                        isRejected = true;
+                        break; // Skip to the next keyword if input contains a reject keyword
+                    }
+                }
+                if (!isRejected) {
+                    return "Compost";
+                }
             }
         }
 
-        return "No keywords detected";
+        return "No-keywords-detected";
     }
+
 }
